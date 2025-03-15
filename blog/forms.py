@@ -9,6 +9,10 @@ class ContactForm(forms.Form):
     email = forms.EmailField(label='Email',  required=True)
     message = forms.CharField(label='Message',  required=True)
 
+    class Meta:
+        fields = ['name', 'email', 'message']
+
+
 class RegisterForm(forms.ModelForm):
     username = forms.CharField(label='username', max_length=100, required=True)
     email = forms.CharField(label='email', max_length=100, required=True)

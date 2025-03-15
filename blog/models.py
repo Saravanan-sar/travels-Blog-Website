@@ -14,7 +14,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
-    img_url = models.ImageField(null=True, upload_to="posts/images")
+    img_url = models.ImageField(max_length=500,null=True, upload_to="posts/images")
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -33,7 +33,14 @@ class Post(models.Model):
     def __str__(self) :
         return self.title
     
-
+class contact(models.Model):
+    name = models.CharField(max_length=100),
+    email = models.EmailField(),
+    message = models.TextField(),
+ 
+    def __str__(self):
+        return self.name
+   
 
 
 class AboutUs(models.Model):

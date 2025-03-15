@@ -40,7 +40,7 @@ def index(request):
     all_posts = Post.objects.filter(is_published=True)
 
     # paginate
-    paginator = Paginator(all_posts, 5)
+    paginator = Paginator(all_posts, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -73,6 +73,8 @@ def new_url_view(request):
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')

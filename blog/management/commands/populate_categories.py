@@ -10,9 +10,8 @@ class Command(BaseCommand):
         # Delete existing data 
         Category.objects.all().delete()
         
-        categories = ['Sports', 'Technology', 'Science', 'Art', 'Food']
-      
-
+        categories = ['NorthIndia', 'SouthIndia', 'EastIndia', 'WestIndia', 'CentralIndia']
+        
         for category_name in categories:
             Category.objects.create(name = category_name)
 

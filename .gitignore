@@ -1,6 +1,21 @@
 # Python cache files
 __pycache__/
+*.py[cod]
+*.sqlite3
 
 # Compiled Python files
 *.pyc
 *.pyo
+
+# ignore virrtual environment
+*.environment
+*.DS_Store
+
+#Ingnore IDE fiels
+.vscode/
+*.log
+
+#ignore database Migrations
+(optional)*/migrations/)
+
+
