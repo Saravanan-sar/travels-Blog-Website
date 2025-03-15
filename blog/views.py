@@ -73,9 +73,8 @@ def new_url_view(request):
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-        name = request.POST.get('name')
+        
+        name = request.POST.get('name')           
         email = request.POST.get('email')
         message = request.POST.get('message')
 
